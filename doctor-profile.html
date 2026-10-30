@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View a MediCare doctor profile and request an appointment.">
     <title>Doctor Profile | MediCare</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header class="site-header">
@@ -13,99 +14,80 @@
                 <span class="brand-mark" aria-hidden="true">✚</span>
                 <span>MediCare</span>
             </a>
-
             <nav class="nav-links" aria-label="Main navigation">
                 <a href="./index.html">Home</a>
-                <a href="./doctors.html">Doctors</a>
+                <a class="active" href="./doctors.html" aria-current="page">Doctors</a>
                 <a href="./services.html">Services</a>
-                <a class="active" href="./doctor-profile.html" aria-current="page">Doctor Profile</a>
                 <a href="./appointment.html">Contact</a>
             </nav>
-
             <a class="btn" href="./appointment.html">Book Appointment ↗</a>
         </div>
     </header>
 
     <main>
-        <section class="page-hero" aria-labelledby="page-title">
+        <section class="profile-hero-wrap" aria-labelledby="doctor-name">
             <div class="container">
                 <nav class="breadcrumb" aria-label="Breadcrumb">
                     <a href="./index.html">Home</a> /
                     <a href="./doctors.html">Doctors</a> /
-                    Doctor Profile
+                    <span id="breadcrumb-doctor">Doctor profile</span>
                 </nav>
-                <span class="eyebrow">Doctor profile</span>
-                <h1 id="page-title">Meet your care partner.</h1>
-                <p>Review the sample profile and use the form to request your preferred appointment.</p>
+
+                <div class="profile-hero">
+                    <img class="profile-portrait" id="doctor-photo" src="./hariom.png" alt="Dr. Hariom Kumar">
+                    <div class="profile-identity">
+                        <span class="badge">Sample clinician</span>
+                        <h1 id="doctor-name">Dr. Hariom Kumar</h1>
+                        <p class="profile-specialty" id="doctor-specialty">Cardiologist · Cardiology</p>
+                        <p id="doctor-qualification">MBBS, MD</p>
+                        <div class="profile-rating"><strong id="doctor-rating">★ 4.9</strong> · Sample rating · <span id="doctor-experience">12 years experience</span></div>
+                        <div class="profile-actions">
+                            <a class="btn" id="profile-request" href="./appointment.html?doctor=hariom-kumar">Request Appointment →</a>
+                            <a class="btn btn-outline" href="./doctors.html">← All doctors</a>
+                        </div>
+                    </div>
+
+                    <aside class="profile-booking" aria-label="Consultation details">
+                        <span class="eyebrow">Consultation fee</span>
+                        <strong class="price" id="doctor-fee">₹600</strong>
+                        <p class="form-note">Per clinic visit · Sample fee</p>
+                        <a class="btn" id="profile-book" href="./appointment.html?doctor=hariom-kumar">Book a visit</a>
+                    </aside>
+                </div>
             </div>
         </section>
 
-        <section class="section" aria-label="Doctor and consultation information">
-            <div class="container profile-layout">
+        <section class="section" aria-label="Doctor details">
+            <div class="container profile-body">
                 <div>
-                    <article class="profile-main" aria-labelledby="doctor-name">
-                        <div class="profile-head">
-                            <img
-                                src="./hariom.png"
-                                alt="Dr. Hariom Kumar"
-                            >
-                            <div>
-                                <span class="badge">Sample profile</span>
-                                <h2 id="doctor-name">Dr. Hariom Kumar</h2>
-                                <p>Cardiology · MBBS, MD</p>
-                                <p>★ 4.9 sample rating · 12 years experience</p>
-                            </div>
-                        </div>
+                    <article class="profile-panel" aria-labelledby="about-title">
+                        <h2 id="about-title">About the doctor</h2>
+                        <p id="doctor-about">Focused on preventive heart-health discussions, general cardiology consultations and follow-up planning.</p>
+                    </article>
 
-                        <div class="detail-list">
-                            <div class="detail-item">
-                                <small>Specialization</small>
-                                <strong>Cardiology</strong>
-                            </div>
-                            <div class="detail-item">
-                                <small>Experience</small>
-                                <strong>12 years</strong>
-                            </div>
-                            <div class="detail-item">
-                                <small>Consultation fee</small>
-                                <strong>₹600 / visit</strong>
-                            </div>
-                            <div class="detail-item">
-                                <small>Consultation mode</small>
-                                <strong>In-clinic</strong>
-                            </div>
-                        </div>
-
-                        <div class="content-card">
-                            <h3>About the doctor</h3>
-                            <p>Dr. Hariom Kumar is a fictional sample doctor profile created to demonstrate how a clinic website can present professional information clearly. In a real service, patients should verify credentials, clinic details, and appointment availability directly with the provider.</p>
-
-                            <h3>Areas of care</h3>
-                            <p>Preventive heart-health discussions, general cardiology consultations, and follow-up appointment planning.</p>
-
-                            <h3>Clinic information</h3>
-                            <p>Sample MediCare Clinic<br>Patna, Bihar, India</p>
-                        </div>
+                    <article class="profile-panel" aria-labelledby="care-title">
+                        <h2 id="care-title">Areas of care</h2>
+                        <p id="doctor-focus">Heart-health consultations, preventive care and follow-up planning.</p>
                     </article>
                 </div>
 
-                <aside class="booking-card" aria-labelledby="consultation-title">
-                    <h2 id="consultation-title">Consultation information</h2>
-                    <p class="form-note">Illustrative schedule — contact the clinic to confirm actual availability.</p>
-
-                    <div class="detail-item">
-                        <small>Monday – Friday</small>
-                        <strong>10:00 AM – 4:00 PM</strong>
-                    </div>
-
-                    <div class="detail-item" style="margin-top: 12px;">
-                        <small>Saturday</small>
-                        <strong>10:00 AM – 1:00 PM</strong>
-                    </div>
-
-                    <p><span class="badge">Appointment request</span></p>
-                    <a class="btn" style="width: 100%;" href="./appointment.html">Request Appointment →</a>
-                    <p class="form-note">This is a front-end student project. Submitting a request will not contact a real doctor.</p>
+                <aside class="profile-panel" aria-labelledby="clinic-title">
+                    <h2 id="clinic-title">Clinic information</h2>
+                    <dl class="profile-facts">
+                        <div>
+                            <dt>Location</dt>
+                            <dd>Patna, Bihar</dd>
+                        </div>
+                        <div>
+                            <dt>Consultation</dt>
+                            <dd>In-clinic visit</dd>
+                        </div>
+                        <div>
+                            <dt>Sample hours</dt>
+                            <dd>Mon–Sat · 10 AM–5 PM</dd>
+                        </div>
+                    </dl>
+                    <p class="form-note">Profile details and availability are illustrative demo content.</p>
                 </aside>
             </div>
         </section>
@@ -121,7 +103,6 @@
                     </a>
                     <p>A student project concept for a clinic appointment portal.</p>
                 </div>
-
                 <div>
                     <h4>Explore</h4>
                     <div class="footer-links">
@@ -129,7 +110,6 @@
                         <a href="./services.html">Services</a>
                     </div>
                 </div>
-
                 <div>
                     <h4>Patient Support</h4>
                     <div class="footer-links">
@@ -137,15 +117,75 @@
                         <a href="./index.html">Home</a>
                     </div>
                 </div>
-
                 <div>
                     <h4>Contact</h4>
                     <p>hello@medicare.example<br>Patna, Bihar</p>
                 </div>
             </div>
-
             <div class="copyright">© 2026 MediCare demo project. Sample information only.</div>
         </div>
     </footer>
+
+    <script>
+        const doctors = {
+            hariom: {
+                name: "Dr. Hariom Kumar",
+                appointmentId: "hariom-kumar",
+                image: "./hariom.png",
+                specialty: "Cardiologist · Cardiology",
+                qualification: "MBBS, MD",
+                rating: "★ 4.9",
+                experience: "12 years experience",
+                fee: "₹600",
+                about: "Focused on preventive heart-health discussions, general cardiology consultations and follow-up planning.",
+                care: "Heart-health consultations, preventive care and follow-up planning."
+            },
+            rohan: {
+                name: "Dr. Rohan Verma",
+                appointmentId: "rohan-verma",
+                image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700",
+                specialty: "General Medicine",
+                qualification: "",
+                rating: "★ 4.8",
+                experience: "9 years experience",
+                fee: "₹400",
+                about: "Focused on general health consultations, routine checkups and preventive-care discussions.",
+                care: "General consultations, routine health checkups and preventive-care discussions."
+            },
+            meera: {
+                name: "Dr. Meera Singh",
+                appointmentId: "meera-singh",
+                image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=700",
+                specialty: "Pediatrics",
+                qualification: "",
+                rating: "★ 4.9",
+                experience: "8 years experience",
+                fee: "₹500",
+                about: "Focused on pediatric consultations, child wellness and preventive-care discussions.",
+                care: "Pediatric consultations, child wellness and preventive care."
+            }
+        };
+
+        const doctorKey = new URLSearchParams(window.location.search).get("doctor");
+        const selectedDoctor = Object.prototype.hasOwnProperty.call(doctors, doctorKey)
+            ? doctors[doctorKey]
+            : doctors.hariom;
+        const appointmentUrl = `./appointment.html?doctor=${selectedDoctor.appointmentId}`;
+        document.title = `${selectedDoctor.name} | MediCare`;
+        document.getElementById("doctor-name").textContent = selectedDoctor.name;
+        document.getElementById("breadcrumb-doctor").textContent = selectedDoctor.name;
+        document.getElementById("doctor-photo").src = selectedDoctor.image;
+        document.getElementById("doctor-photo").alt = selectedDoctor.name;
+        document.getElementById("doctor-specialty").textContent = selectedDoctor.specialty;
+        document.getElementById("doctor-qualification").textContent = selectedDoctor.qualification;
+        document.getElementById("doctor-qualification").hidden = !selectedDoctor.qualification;
+        document.getElementById("doctor-rating").textContent = selectedDoctor.rating;
+        document.getElementById("doctor-experience").textContent = selectedDoctor.experience;
+        document.getElementById("doctor-fee").textContent = selectedDoctor.fee;
+        document.getElementById("doctor-about").textContent = selectedDoctor.about;
+        document.getElementById("doctor-focus").textContent = selectedDoctor.care;
+        document.getElementById("profile-request").href = appointmentUrl;
+        document.getElementById("profile-book").href = appointmentUrl;
+    </script>
 </body>
 </html>

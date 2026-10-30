@@ -18,7 +18,6 @@
                 <a href="./index.html">Home</a>
                 <a href="./doctors.html">Doctors</a>
                 <a href="./services.html">Services</a>
-                <a href="./doctor-profile.html">Doctor Profile</a>
                 <a class="active" href="./appointment.html" aria-current="page">Contact</a>
             </nav>
 
@@ -194,7 +193,6 @@
                     <h4>Appointments</h4>
                     <div class="footer-links">
                         <a href="./appointment.html">Request a visit</a>
-                        <a href="./doctor-profile.html">Doctor profile</a>
                     </div>
                 </div>
 
@@ -212,6 +210,12 @@
         const appointmentForm = document.getElementById("appointment-form");
         const submitRequestButton = document.getElementById("submit-request");
         const formStatus = document.getElementById("form-status");
+        const doctorSelect = document.getElementById("doctor");
+        const selectedDoctor = new URLSearchParams(window.location.search).get("doctor");
+
+        if (selectedDoctor && Array.from(doctorSelect.options).some((option) => option.value === selectedDoctor)) {
+            doctorSelect.value = selectedDoctor;
+        }
 
         appointmentForm.addEventListener("submit", (event) => {
             event.preventDefault();
